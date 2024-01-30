@@ -52,4 +52,16 @@ public class UsrMemberController {
 
 		return member;
 	}
+
+	@RequestMapping("/usr/member/doLogin")
+	@ResponseBody
+	public Object doLogin(String loginId, String loginPw) {
+		return Ut.f("(%s)님 반갑습니다!", loginId);
+	}
+	
+	@RequestMapping("/usr/member/doLogout")
+	@ResponseBody
+	public Object doLogout() {
+		return Ut.f("로그아웃 되었습니다.");
+	}
 }
