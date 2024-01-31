@@ -6,7 +6,6 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.vo.Article;
 
@@ -18,9 +17,10 @@ public interface ArticleRepository {
 			article SET
 			regDate = NOW(),
 			updateDate = NOW(),
-			title = #{title}, `name` = #{name}, `body` = #{body}
+			memberId = #{memberId},
+			title = #{title}, `body` = #{body}
 			""")
-	public void writeArticle(String title, String body);
+	public void writeArticle(int memberId, String title, String body);
 
 	@Select("SELECT LAST_INSERT_ID()")
 	public int getLastInsertId();
