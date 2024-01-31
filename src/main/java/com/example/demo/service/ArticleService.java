@@ -33,8 +33,10 @@ public class ArticleService {
 		articleRepository.deleteArticle(id);
 	}
 
-	public void modifyArticle(int id, String title, String body) {
+	public ResultData modifyArticle(int id, String title, String body) {
 		articleRepository.modifyArticle(id, title, body);
+		
+		return ResultData.from("S-1", Ut.f("%d번 글이 수정되었습니다", id), id);
 	}
 
 	public Article getArticle(int id) {
