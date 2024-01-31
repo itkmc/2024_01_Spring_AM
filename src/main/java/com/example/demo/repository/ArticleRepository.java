@@ -18,7 +18,7 @@ public interface ArticleRepository {
 			article SET
 			regDate = NOW(),
 			updateDate = NOW(),
-			title = #{title}, `body` = #{body}
+			title = #{title}, `name` = #{name}, `body` = #{body}
 			""")
 	public void writeArticle(String title, String body);
 
