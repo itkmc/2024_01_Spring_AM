@@ -25,12 +25,5 @@
 		WHERE id = #{id}
 	</select>
 	
-	<select id="getArticle" resultType="Article">
-		SELECT a.memberId, m.nickname
-			FROM article AS a 
-			INNER JOIN `member` AS m
-			WHERE a.memberId = m.id
-	</select>
-	
 	
 </mapper>
