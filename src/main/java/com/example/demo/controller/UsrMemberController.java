@@ -42,6 +42,12 @@ public class UsrMemberController {
 
 		return "usr/member/login";
 	}
+	
+	@RequestMapping("/usr/member/logout")
+	public String Logout(HttpSession httpSession) {
+
+		return "usr/member/logout";
+	}
 
 	@RequestMapping("/usr/member/doLogin")
 	@ResponseBody
