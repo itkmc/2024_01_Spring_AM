@@ -77,4 +77,23 @@ public class Ut {
 				""", resultMsg, replaceUri);
 	}
 
+	public static String jsReplace(String resultCode, String msg) {
+		if (resultCode == null) {
+			resultCode = "";
+		}
+		if (msg == null) {
+			msg = "";
+		}
+
+		String resultMsg = resultCode + " / " + msg;
+		return Ut.f("""
+					<script>
+					const resultMsg = '%s'.trim();
+					if(resultMsg.length > 0){
+						alert(resultMsg);
+					}
+				</script>
+				""", resultMsg);
+	}
+
 }
