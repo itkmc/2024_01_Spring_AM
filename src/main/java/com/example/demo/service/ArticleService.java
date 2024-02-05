@@ -58,12 +58,12 @@ public class ArticleService {
 		return ResultData.from("S-1", Ut.f("%d번 글을 수정했습니다", article.getId()));
 	}
 
-	public String writeArticle(int memberId, String title, String body) {
+	public ResultData<Integer> writeArticle(int memberId, String title, String body) {
 		articleRepository.writeArticle(memberId, title, body);
 
 		int id = articleRepository.getLastInsertId();
 
-		return Ut.jsReplace("S-1", Ut.f("%d번 글이 생성되었습니다", id), "../article/list");
+		return ResultData.from("S-1", Ut.f("%d번 글이 생성되었습니다", id), "id", id);
 	}
 
 	public void deleteArticle(int id) {
