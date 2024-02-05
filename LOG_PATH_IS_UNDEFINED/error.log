@@ -104,3 +104,18 @@ java.lang.NullPointerException: Cannot invoke "com.example.demo.vo.Rq.isLogined(
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-02-05 16:48:34 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.demo.service.BoardService required a bean of type 'com.example.demo.repository.BoardRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.demo.repository.BoardRepository' in your configuration.
+
