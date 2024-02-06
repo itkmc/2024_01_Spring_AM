@@ -19,7 +19,6 @@
 					<th>날짜</th>
 					<th>제목</th>
 					<th>작성자</th>
-					<th>작성자</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -30,7 +29,6 @@
 						<td>${article.regDate.substring(0,10) }</td>
 						<td><a href="detail?id=${article.id }">${article.title }</a></td>
 						<td>${article.extra__writer }</td>
-						<td>${article.boardId}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
