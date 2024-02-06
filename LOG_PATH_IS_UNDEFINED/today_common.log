@@ -10913,6 +10913,7 @@ Unconditional classes:
 2024-02-06 10:02:53 [DEBUG] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
 2024-02-06 10:02:53 [DEBUG] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
 2024-02-06 10:02:53 [DEBUG] o.s.boot.devtools.restart.Restarter - Starting application com.example.demo.DemoApplication with URLs [file:/C:/work/sts-4.21.0.RELEASE-workspace/demo/target/classes/]
+<<<<<<< HEAD
 2024-02-06 10:02:53 [INFO ] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.9 with PID 7868 (C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes started by admin in C:\work\sts-4.21.0.RELEASE-workspace\demo)
 2024-02-06 10:02:53 [DEBUG] com.example.demo.DemoApplication - Running with Spring Boot v3.1.9-SNAPSHOT, Spring v6.0.16
 2024-02-06 10:02:53 [INFO ] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
@@ -37462,3 +37463,5 @@ ORDER BY A.id DESC
 2024-02-06 12:16:18 [DEBUG] com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
 2024-02-06 12:16:48 [DEBUG] com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Pool stats (total=10, active=0, idle=10, waiting=0)
 2024-02-06 12:16:48 [DEBUG] com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+=======
+>>>>>>> 7da4a23f3aa0a119af1d21f7f916ef39dd0883ab
