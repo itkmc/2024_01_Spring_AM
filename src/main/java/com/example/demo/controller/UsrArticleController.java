@@ -16,6 +16,7 @@ import com.example.demo.vo.Article;
 import com.example.demo.vo.Board;
 import com.example.demo.vo.ResultData;
 import com.example.demo.vo.Rq;
+import com.fasterxml.jackson.databind.deser.impl.CreatorCandidate.Param;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -39,7 +40,7 @@ public class UsrArticleController {
 
 	@RequestMapping("/usr/article/list")
 	public String showList(HttpServletRequest req, Model model, @RequestParam(defaultValue = "1") int boardId,
-			@RequestParam(defaultValue = "1") int page) {
+			@RequestParam(defaultValue = "1") int page, String searchKeyword) {
 
 		Rq rq = (Rq) req.getAttribute("rq");
 
@@ -50,7 +51,9 @@ public class UsrArticleController {
 		if (board == null) {
 			return rq.historyBackOnView("없는 게시판이야");
 		}
-
+		
+		
+		
 		// 한페이지에 글 10개씩이야
 		// 글 20개 -> 2 page
 		// 글 24개 -> 3 page

@@ -35,6 +35,16 @@
 			</tbody>
 		</table>
 	</div>
+	<div>
+		<select class= "select-success w-full max-w-xs" name="seachkeyword">
+			<option value="title">제목</option>
+			<option value="body">내용</option>
+			<option value="extra__writer">작성자</option>
+		</select> <input class="input-bordered input-success w-full max-w-xs" type="text" name="keyword" />
+
+		<button type="text">검색</button>
+
+	</div>
 	<!-- 	동적 페이징 -->
 	<div class="pagination flex justify-center mt-3">
 		<c:set var="paginationLen" value="3" />

@@ -110,5 +110,29 @@ public interface ArticleRepository {
 			</script>
 			""")
 	public List<Article> getForPrintArticles(int boardId, int limitFrom, int limitTake);
+	
+	@Select("""
+			SELECT 
+			id, regDate, title, `body`, extra__writer
+			FROM article
+			WHERE title like %#{seachKeyword}%
+			""")
+	public String getseachtitle(String title);
+	
+	@Select("""
+			SELECT 
+			id, regDate, title, `body`, extra__writer
+			FROM article
+			WHERE `body` like %#{seachKeyword}%
+			""")
+	public String getseachbody(String body);
+	
+	@Select("""
+			SELECT 
+			id, regDate, title, `body`, extra__writer
+			FROM article
+			WHERE extra__writer like %#{seachKeyword}%
+			""")
+	public String getseachextra__writer(String extra__writer);
 
 }
