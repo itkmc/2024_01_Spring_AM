@@ -35,20 +35,7 @@
 			</tbody>
 		</table>
 	</div>
-	<div>
-		<form name="form1" method="post" action="list.do">
-
-			<select name="search_option">
-				<option value="extra__writer" <c:if test="${map.search_option == 'user_id'}">selected</c:if>>작성자</option>
-
-				<option value="title" <c:if test="${map.search_option == 'title'}">selected</c:if>>제목</option>
-
-				<option value="content" <c:if test="${map.search_option == 'content'}">selected</c:if>>내용</option>
-	</div>
-
-	</select> <input name="keyword" value="${map.keyword}"> <input type="submit" value="검색">
-	</form>
-
+	
 	<!-- 	동적 페이징 -->
 	<div class="pagination flex justify-center mt-3">
 		<c:set var="paginationLen" value="3" />
