@@ -65,6 +65,11 @@
 					<th>조회수</th>
 					<td><span class="article-detail__hit-count">${article.hitCount }</span></td>
 				</tr>
+				<tr>
+					<th>좋아요</th>
+					<td>
+					<button class="" type="button" onclick="likeCount++">${article.likeCount }</button></td>
+				</tr>
 			</tbody>
 		</table>
 		<div class="btns mt-5">
