@@ -209,9 +209,7 @@
 				</tr>
 				<tr>
 					<th>조회수</th>
-					<td>
-						<span class="article-detail__hit-count">${article.hitCount }</span>
-					</td>
+					<td><span class="article-detail__hit-count">${article.hitCount }</span></td>
 				</tr>
 				<tr>
 					<th>제목</th>
@@ -220,6 +218,10 @@
 				<tr>
 					<th>내용</th>
 					<td>${article.body }</td>
+				</tr>
+				<tr>
+					<th>댓글</th>
+					<td id="content">${reply.content }</td>
 				</tr>
 
 			</tbody>
@@ -233,6 +235,23 @@
 				<a class="btn btn-outline" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;"
 					href="../article/doDelete?id=${article.id }">삭제</a>
 			</c:if>
+			<form action="../article/doReply" method="POST">
+				<table class="write-box table-box-1" border="1">
+					<tbody>
+						<tr>
+							<th>댓글</th>
+							<td><input class="input input w-full max-w-xs" autocomplete="off" type="text" placeholder="댓글을 입력해주세요"
+								name="content" /></td>
+						</tr>
+						<tr>
+							<th></th>
+							<td><input class="btn btn-outline btn-info" type="submit" value="댓글작성" /></td>
+						</tr>
+					</tbody>
+				</table>
+				<input type="hidden" name="articleId" value="${param.id}" />
+				<!-- 댓글을 작성할 게시물의 ID를 전달 -->
+			</form>
 		</div>
 	</div>
 </section>
