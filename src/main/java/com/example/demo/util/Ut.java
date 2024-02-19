@@ -18,6 +18,10 @@ public class Ut {
 			return true;
 		}
 
+		if (obj instanceof Integer) {
+			return (int) obj == 0;
+		}
+
 		if (obj instanceof String) {
 			return ((String) obj).trim().length() == 0;
 		}
@@ -75,25 +79,6 @@ public class Ut {
 					location.replace('%s');
 				</script>
 				""", resultMsg, replaceUri);
-	}
-
-	public static String jsReplace(String resultCode, String msg) {
-		if (resultCode == null) {
-			resultCode = "";
-		}
-		if (msg == null) {
-			msg = "";
-		}
-
-		String resultMsg = resultCode + " / " + msg;
-		return Ut.f("""
-					<script>
-					const resultMsg = '%s'.trim();
-					if(resultMsg.length > 0){
-						alert(resultMsg);
-					}
-				</script>
-				""", resultMsg);
 	}
 
 }

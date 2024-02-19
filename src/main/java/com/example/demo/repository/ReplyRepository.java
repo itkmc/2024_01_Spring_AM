@@ -6,7 +6,6 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
-import com.example.demo.vo.Article;
 import com.example.demo.vo.Reply;
 
 @Mapper
@@ -24,23 +23,17 @@ public interface ReplyRepository {
 	List<Reply> getForPrintReplies(int loginedMemberId, String relTypeCode, int relId);
 
 	@Insert("""
-			INSERT INTO
-			`reply` SET
-			regDate = NOW(),
-			updateDate = NOW(),
-			memberId = #{memberId},
-			`body` = #{body}
+				INSERT INTO reply
+				SET regDate = NOW(),
+				updateDate = NOW(),
+				memberId = #{loginedMemberId},
+				relTypeCode = #{relTypeCode},
+				relId = #{relId},
+				`body` = #{body}
 			""")
-	public void replyArticle(int memberId, String body);
-
-	@Select("""
-			SELECT *
-			FROM reply
-			WHERE id = #{id}
-			""")
-	public Article getArticle(int id);
+	void writeReply(int loginedMemberId, String relTypeCode, int relId, String body);
 
 	@Select("SELECT LAST_INSERT_ID()")
-	int getLastInsertId();
+	public int getLastInsertId();
 
 }

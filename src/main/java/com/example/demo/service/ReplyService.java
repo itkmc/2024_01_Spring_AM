@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.repository.ReplyRepository;
 import com.example.demo.util.Ut;
-import com.example.demo.vo.Article;
 import com.example.demo.vo.Reply;
 import com.example.demo.vo.ResultData;
 
@@ -25,15 +24,12 @@ public class ReplyService {
 		return replyRepository.getForPrintReplies(loginedMemberId, relTypeCode, relId);
 	}
 
-	public ResultData<Integer> replyArticle(int memberId, String body) {
-		replyRepository.replyArticle(memberId, body);
+	public ResultData<Integer> writeReply(int loginedMemberId, String relTypeCode, int relId, String body) {
+		replyRepository.writeReply(loginedMemberId, relTypeCode, relId, body);
 
 		int id = replyRepository.getLastInsertId();
 
-		return ResultData.from("S-1", Ut.f("%d번 글이 생성되었습니다", id), "id", id);
+		return ResultData.from("S-1", Ut.f("%d번 댓글이 생성되었습니다", id), "id", id);
 	}
 
-	public Article getArticle(int id) {
-		return replyRepository.getArticle(id);
-	}
 }
