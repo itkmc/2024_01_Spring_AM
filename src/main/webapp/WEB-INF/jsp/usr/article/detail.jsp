@@ -219,10 +219,6 @@
 					<th>내용</th>
 					<td>${article.body }</td>
 				</tr>
-				<tr>
-					<th>댓글</th>
-					<td id="content">${reply.content }</td>
-				</tr>
 
 			</tbody>
 		</table>
@@ -247,6 +243,14 @@
 							<th></th>
 							<td><input class="btn btn-outline btn-info" type="submit" value="댓글작성" /></td>
 						</tr>
+						<tr>
+							<th>댓글</th>
+							<td id="content"><c:forEach var="reply" items="${replies}">
+            ${reply.content} <!-- 댓글 내용 표시 -->
+									<br>
+								</c:forEach></td>
+						</tr>
+
 					</tbody>
 				</table>
 				<input type="hidden" name="articleId" value="${param.id}" />

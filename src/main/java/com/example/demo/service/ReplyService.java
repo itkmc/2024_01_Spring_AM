@@ -16,7 +16,7 @@ import com.example.demo.vo.ResultData;
 public class ReplyService {
 
 	@Autowired
-	private ReplyRepository replyRepository;
+	private static ReplyRepository replyRepository;
 
 	public ReplyService(ReplyRepository replyRepository) {
 		this.replyRepository = replyRepository;
@@ -35,7 +35,9 @@ public class ReplyService {
 		return replyRepository.getArticle(id);
 	}
 
-	public List<Reply> getRepliesByArticleId(int articleId) {
+	public static List<Reply> getRepliesByArticleId(int articleId) {
+
 		return replyRepository.getRepliesByArticleId(articleId);
 	}
+
 }
