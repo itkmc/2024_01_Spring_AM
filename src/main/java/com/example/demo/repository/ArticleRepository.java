@@ -50,13 +50,13 @@ public interface ArticleRepository {
 
 	@Update("""
 			UPDATE article
-				<set>
-					<if test="title != null and title != ''">title = #{title},</if>
-					<if test="body != null and body != ''">`body` = #{body},</if>
-					updateDate = NOW()
-				</set>
+			<set>
+			    <if test="title != null and title != ''">title = #{title},</if>
+			    <if test="body != null and body != ''">`body` = #{body},</if>
+			    updateDate = NOW()
+			</set>
 			WHERE id = #{id}
-				""")
+			""")
 	public void modifyArticle(int id, String title, String body);
 
 	@Select("""
@@ -130,7 +130,7 @@ public interface ArticleRepository {
 			FROM article AS A
 			INNER JOIN `member` AS M
 			ON A.memberId = M.id
-			LEFT JOIN `reply` AS R 
+			LEFT JOIN `reply` AS R
 			ON A.id = R.relId
 			WHERE 1
 			<if test="boardId != 0">
