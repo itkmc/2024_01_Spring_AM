@@ -1,8 +1,5 @@
 package com.example.demo.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -138,19 +135,10 @@ public class UsrMemberController {
 
 		return "usr/member/myPage";
 	}
-	
-	@RequestMapping("/usr/member/doJoinCheck")
-	@ResponseBody
-	public Map doJoinCheck(String loginId, String loginPw, String name, String nickname, String cellphoneNum, String email) {
-		Map join = new HashMap<String, Object>();
 
-		join.put("loginId", "아이디 중복이야");
-		join.put("loginPw", "비번 중복이야");
-		join.put("name", "제대로 입력해줘");
-		join.put("nickname", "닉네임 중복이야");
-		join.put("cellphoneNum", "제대로 입력해줘");
-		join.put("email", "제대로 입력해줘");
+	@RequestMapping("/usr/member/checkPw")
+	public String showCheckPw() {
 
-		return join;
+		return "usr/member/checkPw";
 	}
 }
