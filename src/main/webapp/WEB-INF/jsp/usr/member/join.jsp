@@ -3,10 +3,43 @@
 <c:set var="pageTitle" value="JOIN"></c:set>
 <%@ include file="../common/head.jspf"%>
 
+<!-- 제이쿼리 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+	function joinCheck() {
+		var form = document.form1;
+
+		var loginId = form.loginId.value;
+		var loginPw = form.loginPw.value;
+		var name = form.name.value;
+		var nickname = form.nickname.value;
+		var cellphoneNum = form.cellphoneNum.value;
+		var email = form.email.value;
+
+		$.get('./doJoinCheck', {
+			loginId : loginId,
+			loginPw : loginPw,
+			name : name,
+			nickname : nickname,
+			cellphoneNum : cellphoneNum,
+			email : email
+		}, function(data) {
+
+			$('.join-loginId').text(data.loginId);
+			$('.join-loginPw').text(data.loginPw);
+			$('.join-name').text(data.name);
+			$('.join-nickname').text(data.nickname);
+			$('.join-cellphoneNum').text(data.cellphoneNum);
+			$('.join-email').text(data.email);
+
+		}, 'json');
+
+	}
+</script>
 
 <section class="mt-8 text-xl px-4">
 	<div class="mx-auto">
-		<form action="../member/doJoin" method="POST">
+		<form name="form1" action="../member/doJoin" method="POST">
 			<table class="join-box table-box-1" border="1">
 				<tbody>
 					<tr>
@@ -42,7 +75,7 @@
 
 					<tr>
 						<th></th>
-						<td><input class="btn btn-outline btn-info" type="submit" value="가입" /></td>
+						<td><input onclick="joinCheck();" class="btn btn-outline btn-info" type="submit" value="가입" /></td>
 					</tr>
 				</tbody>
 			</table>
@@ -52,7 +85,12 @@
 		</div>
 	</div>
 </section>
-
+<h2>아이디 결과</h2>
+<div class="join-loginId"></div>
+<h2>비번 결과</h2>
+<div class="join-loginPw"></div>
+<h2>이름 결과</h2>
+<div class="join-name"></div>
 
 
 <%@ include file="../common/foot.jspf"%>
