@@ -15,10 +15,10 @@
 	<!-- 지도를 표시할 div 입니다 -->
 	<div id="map" style="width: 100%; height: 350px;"></div>
 
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 API 키"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a78659f2d020c9aaa72c30fea087ff6a"></script>
 	<script>
 		async function getData2() {
-			const API_KEY = '발급받은 API 키';
+			const API_KEY = 'ixQo%2FUislf4YkHMgIBaDkwtFr%2FjmxRZLI55pNfsWntbXQewj3hrI50T6IoARyuZNWhk10ra5m39wMU57zRKeIw%3D%3D';
 			const url = 'https://www.yuseong.go.kr/ys_parking/ysparkingList/ORP/getJSONData.do?_wadl&type=json';
 			const response = await fetch(url);
 			const data = await response.json();
